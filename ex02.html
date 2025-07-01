@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio02</title>
+</head>
+<body style="background-color: cornflowerblue;">
+    <!-- 02. Crie um programa no qual:
+
+a) O usuário informe sua nota na escola
+
+b) Deve haver num botão "opinião da avó"
+
+c) Deve haver num botão "opinião da mãe"
+
+d) Ao clicar num botão "opinião da avó", abaixo dos botões, exibir "Muito bem, que neto inteligente, porque tirou X".
+
+e) Ao clicar num botão "opinião da mãe", abaixo dos botões, exibir "Não fez mais que tua obrigação com essa nota X", onde X é a nota que ele digitou. -->
+
+
+    <h2>Bom Aluno?</h2>
+    informe a nota da escola: <input type="number" id="ipt_num"><br>
+    <button onclick="vovo()">opinião da avó</button><br>
+    <button onclick="mae()">opinião da mãe</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+    function vovo() {
+        txt.innerHTML=`Muito bem, que neto inteligente, porque tirou ${ipt_num.value}👵🏽❤️`
+    
+    }
+
+    function mae() {
+       txt.innerHTML=`Não fez mais que tua obrigação com essa nota ${ipt_num.value}👩🏻❤️`
+        
+    }
+</script>
+</html>

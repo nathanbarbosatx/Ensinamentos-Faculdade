@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio03</title>
+</head>
+<body style="background-color: rgb(222, 125, 125);">
+    <!-- 03. Crie um programa o qual:
+
+    a) Tenha o campo "Cidade Natal"
+
+    b) Tenha o campo "Ano de nascimento"
+
+    c) Tenha o botão "Cadastrar"
+
+    d) Ao clicar no botão, deve aparecer uma caixa de alerta com a frase:
+
+    " Você nasceu na cidade de X em Y" - Onde X é o valor do campo em a) e Y é o valor do campo em b)
+    -->
+
+    <h2>Correios🗃️</h2>
+    Cidade Natal: <input type="text" id="ipt_city"><br>
+    Ano de Nascimento: <input type="number" id="ipt_dt"><br>
+    <button onclick="cadastro()">Cadastrar</button><br>
+</body>
+<script>
+    function cadastro() {
+        alert('Você nasceu na cidade de ' + ipt_city.value + ' em ' + ipt_dt.value )
+    }
+</script>
+</html>
