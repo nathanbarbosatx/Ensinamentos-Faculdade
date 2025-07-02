@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio08</title>
+</head>
+<body style="background-color: rgb(249, 255, 127);">
+<!-- 08. Crie um programa que ajude um grupo de amigos a saber quanto uma pizza vai custar para cada amigo.
+
+a) Solicite o valor da pizza e a quantidade de amigos que vão dividir o valor.
+
+b) Ao clicar num botão "#lovePizza", exiba um alerta com a frase
+
+"Cada um dos X amigos vai pagar R$Y"
+
+Onde X é a quantidade de amigos e Y é o resultado do cálculo que seu programa fará -->
+
+    <h2>Noite da Pizza🍕</h2>
+    Qual o valor da pizza? <input type="number" id="ipt_valor"><br>
+    Quantidade de amigos <input type="number" id="ipt_amigo"><br>
+    <button onclick="vacaquinha()">#lovePizza</button><br>
+</body>
+<script>
+
+    function vacaquinha() {
+        var valorfinal = ipt_valor.value/ipt_amigo.value;
+        alert('Cada um dos ' + ipt_amigo.value + ' amigos vai pagar R$' + valorfinal);
+    }
+
+</script>
+</html>

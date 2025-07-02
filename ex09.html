@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio09</title>
+</head>
+<body style="background-color: aquamarine;">
+<!-- 09. Um estudante recebeu o Bilhete Único de estudante pela primeira vez e deseja saber quanto vai economizar por mês. O valor para estudante é metade do valor da passagem. Crie um programa que:
+
+a) Pergunte a ele o valor da passagem
+
+b) Pergunte a ele quantas viagens fará por mês
+
+c) Ao clicar num botão "Ver economia", deve ver um alerta com uma frase como esta: "Você economizará R$X por mês" -->
+
+    <h2>Sptrans🚉</h2>
+    Valor da passagem: <input type="number" id="ipt_valor"><br>
+    Quantas Viagens: <input type="number" id="ipt_viagem"><br>
+    <button onclick="economia()">Ver Economia</button>
+</body>
+<script>
+
+    function economia() {
+        var passagem = ipt_valor.value/2
+        var valorfinal = passagem*ipt_viagem.value;
+        alert('Você economizará R$' + valorfinal + ' por mês')
+    }
+
+</script>
+</html>
