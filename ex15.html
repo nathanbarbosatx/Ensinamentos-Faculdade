@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio15</title>
+</head>
+<body style="background-color: rgb(127, 223, 255);">
+<!--15. Crie um programa o qual:
+
+a) Solicite a quantidade de votos que o "Candidato A" teve na eleição
+
+b) Solicite a quantidade de votos que o "Candidato B" teve na eleição
+
+c) Solicite a quantidade de votos brancos que houveram na eleição
+
+d) Solicite a quantidade de votos nulos que houveram na eleição
+
+e) Ao clicar em "Resultado da Eleição", exibir textos  conforme o exemplo abaixo:
+
+   Total de votos: 200
+
+   Candidato A: 40% (80 votos)
+
+   Candidato B: 35% (70 votos)
+
+   Inválidos: 25% (50 votos)
+
+A quantidade de votos "Inválidos" é a soma de brancos e nulos - valores colhidos nos itens c) e d) -
+
+Não se preocupe em mostrar primeiro o "vencedor". Não temos como saber isso com o que aprendemos na programação até aqui ;)
+
+Mostre os candidatos na ordem que quiser.  -->
+
+
+    <h2>Eleição 2026</h2>
+    Quantos votos teve o Candidato A : <input type="number" id="ipt_a"><br>
+    Quantos votos teve o Candidato B : <input type="number" id="ipt_b"><br>
+    Quantidade de votos brancos : <input type="number" id="ipt_branco"><br>
+    Quantidade de votos nulos : <input type="number" id="ipt_nulos"><br>
+    <button onclick="result()">Resultado da Eleição</button><br>
+    <div id="txt"></div>
+
+</body>
+<script>
+
+
+    function result() {
+        var invalidos = Number(ipt_branco.value) + Number(ipt_nulos.value);
+        var candA = Number(ipt_a.value);
+        var candB = Number(ipt_b.value);
+        var total = candA + candB + invalidos;
+        var porcentagemA = (candA * 100)/total;
+        var porcentagemB = (candB * 100)/total;
+        var porcentageminvalidos = (invalidos * 100)/total;
+        txt.innerHTML=`
+        Total de votos: ${total}<br>
+        Candidato A: ${porcentagemA}% (${candA} votos)<br>
+        Candidato B: ${porcentagemB}% (${candB} votos)<br>
+        Inválidos: ${porcentageminvalidos}% (${invalidos} votos)<br>`
+    }
+
+</script>
+</html>

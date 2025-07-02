@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio14</title>
+</head>
+<body>
+<!--14. Crie um programa que:
+
+a) Solicite o valor a ser depositado/retirado pelo usuário
+
+b) Tenha os botões “Depositar” e “Retirar”. Ao clicar em algum deles, exibe um alerta com uma das mensagens abaixo, de acordo com o botão que foi clicado:
+
+   Depósito de R$X efetuado! Saldo atual: R$Y
+
+   Retirada de R$X efetuada! Saldo atual: R$Y
+
+OBS: utilize variáveis globais para iniciar o valor do saldo como 0, para depois ir reduzindo/incrementando de acordo com a operação realizada, preservando o valor anterior -->
+
+    <h2>Banco Dos Amigos🏦</h2>
+    Qual o valor do Depósito: <input type="number" id="ipt_depo"><br>
+    Qual o valor do Saque: <input type="number" id="ipt_saque"><br>
+    <button onclick="deposito()">Depositar</button><br>
+    <button onclick="retira()">Retirar</button><br>
+    
+</body>
+<script>
+
+    saldo = 0;
+
+    function deposito() {
+        var valordepo = ipt_depo.value;
+        saldo = ((+saldo) + (+valordepo));
+        alert(`Depósito de R$${valordepo} efetuado! Saldo atual: R$${saldo}`)
+    }
+
+    function retira() {
+        var saque = ipt_saque.value;
+        saldo = saldo - saque;
+        alert(`Retirada de R$${saque} efetuada! Saldo atual: R$${saldo}`)
+    }
+
+</script>
+</html>

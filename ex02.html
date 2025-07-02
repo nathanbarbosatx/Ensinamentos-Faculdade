@@ -27,12 +27,14 @@ e) Ao clicar num botão "opinião da mãe", abaixo dos botões, exibir "Não fez
 </body>
 <script>
     function vovo() {
-        txt.innerHTML=`Muito bem, que neto inteligente, porque tirou ${ipt_num.value}👵🏽❤️`
+        var nota= Number(ipt_num.value)
+        txt.innerHTML=`Muito bem, que neto inteligente, porque tirou ${nota}👵🏽❤️`
     
     }
 
     function mae() {
-       txt.innerHTML=`Não fez mais que tua obrigação com essa nota ${ipt_num.value}👩🏻❤️`
+        var nota1= Number(ipt_num.value)
+       txt.innerHTML=`Não fez mais que tua obrigação com essa nota ${nota1}👩🏻❤️`
         
     }
 </script>
