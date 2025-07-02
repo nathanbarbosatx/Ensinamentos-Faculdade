@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio06</title>
+</head>
+<body style="background-color: antiquewhite;">
+    <!-- 06. Crie uma página que solicite ao usuário que digite o nome da rua/avenida/vila e o número da casa onde mora.
+
+a) Deve haver um botão com o texto "Onde eu moro".
+
+b) Ao clicar no botão, deve aparecer uma frase como esta em um alerta
+
+"Seu logradouro é X" - Onde X é o valor que o usuário digitou no primeiro campo
+
+c) Na sequência da mensagem acima, deve aparecer em outro alerta:
+
+"O número do seu logradouro é Y"  - Onde Y é o valor que o usuário digitou no segundo campo
+
+OBS: aparecem 2 mensagens, uma após a outra! -->
+
+    <h2>Sedex🗃️</h2>
+    Nome da Rua: <input type="text" id="ipt_rua"><br>
+    N°  da Casa: <input type="number" id="ipt_num"><br>
+    <button onclick="mora()">Onde eu moro</button><br>
+</body>
+<script>
+
+    function mora() {
+        alert('Seu logradouro é ' + ipt_rua.value);
+        alert('O número do seu logradouro é ' + ipt_num.value);
+    }
+
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio12</title>
+</head>
+<body style="background-color: coral;">
+<!--12. Crie um programa o qual:
+
+a) Solicite o peso e a altura do usuário;
+
+b) Ao clicar num botão "Calcular IMC", calcule e exiba seu IMC na tela (não num alert), abaixo do botão;
+
+Obs: Pesquise a fórmula simples de IMC na internet;  -->
+
+    <h2>IMC🥙</h2>
+ Qual o seu peso: <input type="number" id="ipt_peso"><br>
+ Qual a sua altura: <input type="number" id="ipt_altura"><br>
+ <button onclick="calculo()">Calcular IMC</button><br>
+ <div id="txt"></div>
+
+</body>
+<script>
+
+    function calculo() {
+        var peso = ipt_peso.value;
+        var altura = ipt_altura.value * ipt_altura.value;
+        var IMC = peso / altura;
+        txt.innerHTML=`Seu Índice de Massa Corporal é de ${IMC}`
+    }
+
+</script>
+</html>
