@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Repetição</title>
+</head>
+<body>
+<!--01. Crie um programa que:
+
+a) Pergunte ao usuário sua idade.
+
+b) Ao clicar num botão "Ir pra festa":
+
+b1) Caso a idade seja menor que 18, deve aparecer um alert com a frase "Pedir permissão pro responsável"
+
+b2) Sempre vai aparecer um alert com a palavra "#partiuFesta" ao final
+
+OBS: caso tenha 18 anos ou mais, deve somente a segunda mensagem.  -->
+
+    <h2>Festa!!!</h2>
+    Qual a sua idade? <input type="number" id="ipt_idade"><br>
+    <button onclick="calcular()">Ir pra Festa</button><br>
+</body>
+<script>
+
+    function calcular() {
+        var idade = Number(ipt_idade.value);
+        if (idade < 18) {
+            alert('Pedir permissão pro responsável')
+        } else{
+            alert('#partiuFesta')
+        }
+    }
+
+</script>
+</html>
