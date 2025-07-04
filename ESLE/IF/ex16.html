@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<body>
+<!--16. Uma nutróloga deseja um programa que ajude-a no processo de avaliação do peso de crianças de 5 anos.
+
+Seu programa, ao ler o peso da criança, deve exibir uma dessas frases:
+
+   - Abaixo do peso (se peso até 13.5kg)
+   - Acima do peso (se peso maior que 21.2kg)
+   - Peso na média (se peso maior que 13.5kg até 21.2kg)
+   - Peso perfeito (se o peso for exatamente 18.3kg)  -->
+
+    <h2>Pediatria</h2>
+    Insira o peso da criança: <input type="number" id="ipt_peso" onkeyup="verificar()">
+    <div id="txt"></div>
+</body>
+<script>
+
+    function verificar() {
+        var peso = Number(ipt_peso.value);
+
+        if (peso <= 13.5) {
+            txt.innerHTML=`Abaixo do peso`
+        }
+        else if (peso == 18.3) {
+            txt.innerHTML=`Peso Perfeito`
+        }
+        else if (peso <= 21.2) {
+            txt.innerHTML=`Peso na média`
+        }
+        else if (peso > 21.2) {
+            txt.innerHTML=`Acima do peso`
+        }
+    }
+
+</script>
+</html>

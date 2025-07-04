@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<body>
+<!--15. Para o ser humano, a temperatura é...
+
+    - Congelante (até menos de 14ºC)
+    - Com Frio (entre 14ºC e 21ºC)
+    - Confortável (mais de 21ºC até 24ºC)
+    - Com Calor (mais de 24ºC até 31ºC)
+    - Calor escaldante (mais de 31ºC)
+
+Crie um programa que, ao ler uma temperatura inserida pelo usuário, exiba uma dessas situações acima.  -->
+
+    <h2>Temperatura</h2>
+    Insira a temperatura: <input type="number" id="ipt_temp" oninput="verificar()"><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function verificar() {
+        var temperatura = Number(ipt_temp.value);
+        
+        if (temperatura < 14) {
+            txt.innerHTML=`Congelante`
+        } 
+        else if (temperatura <=21) {
+            txt.innerHTML=`Com frio`
+        }
+        else if (temperatura <=24) {
+            txt.innerHTML=`Confortável`
+        }
+        else if (temperatura <= 31) {
+            txt.innerHTML=`Com calor`
+        }
+        else if (temperatura > 31) {
+            txt.innerHTML=`Calor escaldante`
+        }
+    }
+
+</script>
+</html>
