@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #f9bcbc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+<body>
+    <h2>⛹🏻 Esportes</h2>
+    Qual a sua altura: <input type="number" id="ipt_alt"><br>
+    <button onclick="calcular()">Analisar Estatura</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function calcular() {
+        var altura = ipt_alt.value;
+
+        if (altura <= 1.65) {
+            txt.innerHTML=`Você pode ser piloto de corrida`
+        } 
+        else if (altura <=1.80) {
+            txt.innerHTML=`Você pode ser jogador de futebol`
+        } 
+        else if (altura > 1.80) {
+            txt.innerHTML=`Você pode ser jogador de vôlei ou basquete`
+        }
+    }
+
+</script>
+</html>

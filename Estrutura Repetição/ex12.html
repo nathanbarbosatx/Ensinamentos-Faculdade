@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #f9bcbc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+<body>
+    <h2>👩‍💻 Notas dos alunos</h2>
+    Nota da prova AC1: <input type="number" id="ipt_ac1"><br>
+    Nota da prova AC2: <input type="number" id="ipt_ac2"><br>
+    <button onclick="calcular()">Verificar situação</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function calcular() {
+        var primeira = Number(ipt_ac1.value);
+        var segunda = Number(ipt_ac2.value);
+        var media = (primeira + segunda)/2;
+
+        if (media >= 6) {
+            txt.innerHTML=`Parabéns, aprovado!`
+        } 
+        else{
+            txt.innerHTML=`Tente outra vez...`
+        }
+    }
+
+</script>
+</html>

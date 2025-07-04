@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #ef89d0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+<body>
+    <h2>👩‍💻 Nota do aluno</h2>
+    Qual a sua nota: <input type="number" id="ipt_nota"><br>
+    <button onclick="calcular()">Classificar aluno</button>
+</body>
+<script>
+
+    function calcular() {
+        var nota = Number(ipt_nota.value);
+
+        if (nota < 5) {
+            alert('Aluno precisa de muita ajuda')
+        } 
+        else if (nota <= 7) {
+            alert('Aluno na média')
+        }
+        else if (nota <= 9.5) {
+            alert('Aluno acima da média')
+        }
+        else if (nota > 9.5) {
+            alert('Aluno fora da curva')
+        }
+    }
+
+</script>
+</html>

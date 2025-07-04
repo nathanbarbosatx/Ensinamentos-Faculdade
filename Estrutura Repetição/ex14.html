@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #bcf9c7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+<body>
+    <h2>💸 Bolsa-Familia</h2>
+    Renda familiar mensal: <input type="number" id="ipt_renda"><br>
+    <button onclick="calcular()">Analisar Renda</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function calcular() {
+        var renda = Number(ipt_renda.value);
+        if (renda <= 250) {
+            txt.innerHTML=`Classe E`
+        } 
+        else if (renda <=900) {
+            txt.innerHTML=`Classe D`
+        } 
+        else if (renda <=2500) {
+            txt.innerHTML=`Classe C`
+        }
+        else if (renda <=9500) {
+            txt.innerHTML=`Classe B`
+        } 
+        else if (renda > 9500) {
+            txt.innerHTML=`Classe A`
+        }
+    }
+
+</script>
+</html>

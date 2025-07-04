@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #e3e8ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+<body>
+    <h2>🏦 Banco da Praça</h2>
+    Saldo da sua conta: <input type="number" id="ipt_saldo"><br>
+    <button onclick="calcular()">Verificar finanças</button><br>
+    <div id="txt"></div>
+
+</body>
+<script>
+
+    function calcular() {
+        var saldo = Number(ipt_saldo.value);
+
+        if (saldo == 0) {
+            txt.innerHTML = `Conta zerada!!!`
+        }
+        else if (saldo < 0) {
+            txt.innerHTML = `<b style="color:red;">Está devendo</b>`
+        } 
+        else if (saldo > 0) {
+            txt.innerHTML = `<b style="color:blue;"> Saldo Positivo! sorriso`
+        }
+    }
+
+</script>
+
+</html>

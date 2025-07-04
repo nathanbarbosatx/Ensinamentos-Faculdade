@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #d0f0ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+
+<body>
+    <h2>🏦 Banco da Praça</h2>
+    Saldo da conta: <input type="number" id="ipt_saldo"><br>
+    Valor do saque: <input type="number" id="ipt_saque"><br>
+    <button onclick="calculo()">Analisar conta</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function calculo() {
+        var saldo = Number(ipt_saldo.value);
+        var saque = Number(ipt_saque.value);
+        var atualiza = saldo - saque
+        if (atualiza > 0) {
+            txt.innerHTML = `O saldo atual da conta corrente é R$${atualiza}`
+        } else {
+            txt.innerHTML = `<b style='background-color:red'>O saldo atual da conta corrente é R$${atualiza}</b>`
+        }
+    }
+
+</script>
+
+</html>

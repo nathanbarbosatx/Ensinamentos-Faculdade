@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #d2f8d2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+
+<body>
+    <h2>🥤 Galão de refrigerante</h2>
+    Quantas latinhas de refrigerante toma por dia? <input type="number" id="ipt_lata"><br>
+    <button onclick="calculo()">Quantos refris?</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function calculo() {
+        var lata = Number(ipt_lata.value);
+        var conta = lata * 365
+        if (conta < 500) {
+            txt.innerHTML = `Você bebe ${lata} por dia, você sabia que em um ano você consome ${conta} latas de refri? CARAMBA!!!`
+        }
+
+        if (conta >= 500) {
+            txt.innerHTML = `Você bebe ${lata} por dia, você sabia que em um ano você consome ${conta} latas de refri? CARAMBA!!!<br>
+            Cuidado com a diabetes!`
+
+        }
+    }
+
+</script>
+
+</html>

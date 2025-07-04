@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+</head>
+<style>
+    body {
+        background-color: #e3e8ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+
+<body>
+    <h2>📺 Streaming</h2>
+    Qual última série (SITCOM) que você assistiu? <input type="text" id="ipt_filme"><br>
+    Quantos eps você já assistiu? <input type="text" id="ipt_eps"><br>
+    <button onclick="calcular()">Verificar nível</button><br>
+    <div id="txt"></div>
+
+</body>
+<script>
+
+
+    function calcular() {
+        var eps = Number(ipt_eps.value);
+        var tempo = eps * 0.22;
+        txt.innerHTML = ''
+        if (tempo <= 30) {
+            txt.innerHTML = `Vejo que você gosta da série ${ipt_filme.value}`
+        } else {
+            txt.innerHTML += `Vejo que você gosta da série ${ipt_filme.value}<br>
+            Uau, você realmente gosta dessa série!<br>`
+        }
+    }
+
+</script>
+
+</html>

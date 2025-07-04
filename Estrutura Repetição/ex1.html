@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Repetição</title>
+</head>
+<style>
+    body {
+        background-color: #d6f0ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input,
+    button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+
+<body>
+    <h2>🎉 Festa!!!</h2>
+    Qual a sua idade? <input type="number" id="ipt_idade"><br>
+    <button onclick="calcular()">Ir pra Festa</button><br>
+</body>
+<script>
+
+    function calcular() {
+        var idade = Number(ipt_idade.value);
+        if (idade < 18) {
+            alert('Pedir permissão pro responsável');
+        }
+        alert('#partiuFesta');
+    }
+</script>
+
+</html>
