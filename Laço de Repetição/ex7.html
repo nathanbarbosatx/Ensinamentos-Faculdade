@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Amantes de Pares</h2>
+    Insira o Número de inicio: <input type="number" id="ipt_inicio"><br>
+    Insira o Número de final: <input type="number" id="ipt_final"><br>
+    <button onclick="conta()">S2 Pares</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var inicio = Number(ipt_inicio.value);
+        var final = Number(ipt_final.value);
+        txt.innerHTML=``;
+
+        if (inicio >= 0 && inicio < final) {
+            for (var i = inicio + 1; i < final; i++) {
+                if (i % 2 == 0) {
+                    txt.innerHTML+=`${i}<br>`
+                }
+                
+            }
+        }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+
+<body>
+    <h2>Acompanhamento de Depósitos</h2>
+    Quantos depósitos você fez?<input type="number" id="ipt_qtd"><br>
+    Qual o valor de cada depósito?<input type="number" id="ipt_valor"><br>
+    <button onclick="conta()">Acompanhar grana</button>
+    <div id="txt"></div>
+</body>
+<script>
+    function conta() {
+        var qtd = Number(ipt_qtd.value);
+        var valor = Number(ipt_valor.value);
+        txt.innerHTML = '';
+
+        if (qtd > 0 && valor >= 0) {
+            var total = 0;
+
+            for (var i = 1; i <= qtd; i++) {
+                total += valor;
+                txt.innerHTML += `${i}º Mês: R$ ${total.toFixed(2)}<br>`;
+            }
+
+            txt.innerHTML += `Total guardado: R$ ${total.toFixed(2)}`;
+        }
+        else {
+            alert('Por favor, preencha os valores corretamente.');
+        }
+    }
+</script>
+
+</html>

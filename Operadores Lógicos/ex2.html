@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Bolsa Familía do Covid</h2>
+    Qual a sua renda: <input type="number" id="ipt_renda"><br>
+    Renda Familiar: <input type="number" id="ipt_conjunto"><br>
+    <button onclick="conta()">Verificar Ajuda</button><br>
+</body>
+<script>
+
+    function conta() {
+        var renda = Number(ipt_renda.value);
+        var conjunto = Number(ipt_conjunto.value);
+
+        if (renda == 0 || conjunto == 0) {
+            alert('Insira Valores');
+        } 
+        else if ((renda > 0 && renda <= 1500) && (conjunto > 0 && conjunto <= 2100)) {
+            alert('Você terá direito!')
+        } 
+        else{
+            alert('Você NÃO terá direito')
+        }
+    }
+
+</script>
+</html>

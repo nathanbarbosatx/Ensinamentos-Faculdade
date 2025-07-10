@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Amor aos Pares</h2>
+    <button onclick="conta()">S2 Pares</button>
+    <div id="txt" style="font-family: Arial; color: blue;"></div>
+</body>
+<script>
+
+    function conta() {
+        var contador = 0;
+        txt.innerHTML=``
+
+        while (contador <= 100) {
+            if (contador % 2 == 0) {
+                txt.innerHTML+=`${contador}<br>`
+            }
+            contador++;
+        }
+    }
+
+</script>
+</html>

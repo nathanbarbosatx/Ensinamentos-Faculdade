@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Papagaio</h2>
+    Informe um número: <input type="number" id="ipt_num"><br>
+    Informe uma frase: <input type="text" id="ipt_frase"><br>
+    <button onclick="conta()">Papagaio</button><br>
+</body>
+<script>
+
+    function conta() {
+        var qtd = Number(ipt_num.value);
+        var frase = ipt_frase.value;
+        
+        if (qtd > 0) {
+            for (var i = 0; i < qtd; i++) {
+                var texto = '';
+
+                for (var n = 0; n < qtd; n++) {
+                    texto += frase + '';
+                    
+                }
+       
+                alert(texto)
+            }
+        }
+    }
+
+</script>
+</html>

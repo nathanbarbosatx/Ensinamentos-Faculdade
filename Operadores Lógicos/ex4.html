@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Netflix</h2>
+    Qual hora do dia você costuma acessar a Netflix? <input type="number" id="ipt_hora"><br>
+    <button onclick="conta()">Ver recomendação</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var hora = Number(ipt_hora.value);
+
+        if (hora == '') {
+            alert('insira um valor valido')
+        } 
+        else if (hora >= 19 && hora <=21) {
+            txt.innerHTML=`Não é recomendável que você assista sua série favorita no horário ${hora}HS!`
+        } 
+        else{
+            txt.innerHTML=`O horário ${hora}HS é adequado para assistir sua série favorita!`
+        }
+
+    }
+
+</script>
+</html>

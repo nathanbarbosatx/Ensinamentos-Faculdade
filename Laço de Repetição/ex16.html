@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Canção do Elefante</h2>
+    Quantos elefantes você quer contar?<input type="number" id="ipt_qtd"><br>
+    <button onclick="cantar()">Atazanar a médium</button>
+    <div id="txt"></div>
+</body>
+<script>
+function cantar() {
+    var total = Number(ipt_qtd.value);
+    txt.innerHTML = '';
+
+    if (total == 1) {
+        txt.innerHTML = `1 elefante incomoda muita gente!`;
+    } 
+    else if (total > 1) {
+        for (var i = 2; i <= total; i++) {
+            txt.innerHTML += `1 elefante incomoda muita gente!<br>`;
+            
+            var incomodam = '';
+            for (var n = 1; n <= i; n++) {
+                incomodam += 'incomodam, ';
+            }
+            txt.innerHTML += `${i} elefantes, ${incomodam} muito mais!<br><br>`;
+        }
+    } 
+    else {
+        alert('Insira o numero de vezes')
+    }
+}
+</script>
+</html>

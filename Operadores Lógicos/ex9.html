@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Auxilio Covid</h2>
+    Renda individual: <input type="number" id="ipt_indv"><br>
+    Renda familiar: <input type="number" id="ipt_fml"><br>
+    <button onclick="resultado()">Terei o benefício</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function resultado() {
+        var indv = Number(ipt_indv.value);
+        var familia = Number(ipt_fml.value);
+
+        if (indv == '' && familia == '') {
+            alert('Insira Valores');
+        } 
+        else if ((indv <= 2000 || familia <= 3000)) {
+            alert('Você terá direito ao auxílio')
+        } 
+        else {
+            alert('Sem direito ao auxílio')
+        }
+    }
+
+</script>
+</html>

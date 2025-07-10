@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+
+<body>
+    <div id="txt"></div>
+</body>
+<script>
+
+    txt.innerHTML = '';
+
+    for (var i = 1; i <= 100; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            txt.innerHTML += 'FizzBuzz<br>';
+        }
+        else if (i % 3 == 0) {
+            txt.innerHTML += 'Fizz<br>';
+        }
+        else if (i % 5 == 0) {
+            txt.innerHTML += 'Buzz<br>';
+        }
+        else {
+            txt.innerHTML += i + '<br>';
+        }
+    }
+</script>
+
+</html>

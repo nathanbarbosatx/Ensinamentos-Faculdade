@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Frutas</h2>
+    Qual fruta? <input type="text" id="ipt_nome"><br>
+    <button onclick="resultado()">Vai Comer?</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function resultado() {
+        var nome = ipt_nome.value;
+
+        if (nome == 'uva') {
+            alert('Sim, vai comer uva')
+        } 
+        else if (nome == 'abacaxi') {
+            alert('Sim, vai comer abacaxi')
+        }
+        else {
+            alert(`A fruta ${nome} ela não come`)
+        }
+    }
+
+</script>
+</html>

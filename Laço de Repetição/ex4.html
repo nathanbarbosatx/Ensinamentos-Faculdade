@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+
+<body>
+    <h2>Amantes de 5</h2>
+    Informe um número: <input type="number" id="ipt_numero"><br>
+    <button onclick="conta()">Adoro múltiplos de 5</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var numero = Number(ipt_numero.value);
+        var i = 0;
+        if (numero >= 20 && numero <= 100) {
+            while (i <= numero) {
+                if (i % 5 == 0 && i != 0) {
+                    txt.innerHTML += `${i}<br>`
+                }
+                i++;
+            }
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Lokos por café</h2>
+    Quantas xícaras de café com leite você ja tomou? <input type="number" id="ipt_qtd"><br>
+    <button onclick="conta()">Ver a quantidade</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+   function conta() {
+    var copos = Number(ipt_qtd.value);
+    txt.innerHTML = '';
+
+    if (copos > 0) {
+        for (var i = 1; i <= copos; i++) {
+            txt.innerHTML += `Xícara ${i}: 1 colher de leite em pó e 2 colheres de café em pó<br>`;
+        }
+        txt.innerHTML += `<br>Total: ${copos} colher(es) de leite em pó e ${copos * 2} colher(es) de café em pó.`;
+    } 
+    else {
+        txt.innerHTML = 'Digite um número válido maior que zero.';
+    }
+}
+</script>
+</html>

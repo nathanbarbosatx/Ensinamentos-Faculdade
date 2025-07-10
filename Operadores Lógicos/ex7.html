@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> OPERADORES</title>
+</head>
+
+<body>
+    <h2>SPTrans</h2>
+    Quantas passagens: <input type="number" id="ipt_passagem"><br>
+    <button onclick="conta()">Comprar</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+
+    function conta() {
+        var quantd = Number(ipt_passagem.value);
+        var passagem = 4.40;
+        var contador = 0;
+        txt.innerHTML = '';
+
+        if (quantd < 8 || quantd > 50) {
+            alert('Quantidade invalida para fidelidade')
+        }
+        else {
+
+            if (quantd >= 8 && quantd <= 19) {
+                contador = 0.03;
+            }
+            else if (quantd >= 20 && quantd <= 49) {
+                contador = 0.05;
+            }
+            else if (quantd == 50) {
+                contador = 0.07;
+            }
+
+            var valorfinalpassagem = passagem - (passagem * contador);
+
+            var total = valorfinalpassagem * quantd;
+
+            txt.innerHTML=`Total a pagar: R$${total.toFixed(2)}`
+        }
+    }
+
+</script>
+
+</html>

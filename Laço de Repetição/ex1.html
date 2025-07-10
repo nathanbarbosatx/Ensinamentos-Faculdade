@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Demostrando amor</h2>
+    Qual o nome do amado(a)? <input type="text" id="ipt_nome"><br>
+    O quanto voce ama? <input type="text" id="ipt_qtd"><br>
+    <button onclick="conta()">Expressar o amor</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var nome = ipt_nome.value;
+        var qtd = Number(ipt_qtd.value);
+        var i = 1;
+        txt.innerHTML=``;
+
+        if (qtd > 0) {
+            while (i <= qtd) {
+                txt.innerHTML +=` ${i} - ${nome}, eu te amo! Sempre lembre disso!<br>`
+                i++;
+            }
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Números Cabalísticos</h2>
+    <button onclick="conta()">Números Cabalísticos</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var i = 1;
+
+        while ( i <= 30) {
+            if (i == '3' || i == '4' || i == '7' || i == '10' || i == '12') {
+                i++;
+                continue;
+            }
+            txt.innerHTML+=`${i}<br>`
+            i++;
+        }
+    }
+
+</script>
+</html>

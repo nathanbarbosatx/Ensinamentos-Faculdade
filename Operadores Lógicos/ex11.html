@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Temperatura</h2>
+    Qual a temperatura atual? <input type="number" id="ipt_temp"><br>
+    <button onclick="resultado()">Analisar clima</button>
+</body>
+<script>
+
+    function resultado() {
+        var temp = Number(ipt_temp.value);
+
+        if (temp == '') {
+            alert('Insira Valores');
+            return;
+        } 
+        else if (temp < 21) {
+            alert('Alerta de desconforto!')
+            alert('As pessoas vão ter hipotermia')
+        }
+        else if (temp > 24) {
+            alert('Alerta de desconforto!')
+            alert('As pessoas vão derreter')
+        }
+    }
+
+</script>
+</html>

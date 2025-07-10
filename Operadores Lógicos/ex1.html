@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Frio do Caramba</h2>
+    Qual a Temperatura? <input type="number" id="ipt_temp"> <br>
+    <button onclick="contar()">Ver situação</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function contar() {
+        var temp = Number(ipt_temp.value);
+        txt.innerHTML='';
+
+        if (temp == '') {
+            alert('Insira a temperatura :)')
+        } 
+        else if (temp >=21 && temp <=24) {
+            txt.innerHTML = `Temperatura confortável :D`
+        } 
+        else {
+            alert('Temperatura DESCONFORTÁVEL :C')
+        }
+    }
+
+</script>
+</html>

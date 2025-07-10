@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Vamos brincar!</h2>
+    Início do intervalo: <input type="number" id="ipt_inicio"><br>
+    Final do intervalo: <input type="number" id="ipt_final"><br>
+    <button onclick="conta()">Curto 3 e 5!</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var inicio = Number(ipt_inicio.value);
+        var final = Number(ipt_final.value);
+        txt.innerHTML=``;
+
+        if (inicio > 0 && inicio < final ) {
+            for (var i = inicio  ; i <= final; i++) {
+                
+                if (i % 3 == 0 && i % 5 == 0) {
+                    txt.innerHTML+=`${i} (É TRI!É PENTA!)<br>`
+                } 
+                else if (i % 3 == 0) {
+                    txt.innerHTML+=`${i} (É TRI!) <br>`
+                }
+                else if (i % 5 == 0) {
+                    txt.innerHTML+=`${i} (É PENTA!)<br>`
+                } 
+                else {
+                    txt.innerHTML+=`${i}<br>`
+                }
+                
+            }
+        }
+    }
+
+
+</script>
+</html>

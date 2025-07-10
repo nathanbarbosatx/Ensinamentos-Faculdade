@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Coquinha</h2>
+    Quantas coca-cola você acha que ja bebeu? <input type="number" id="ipt_qtd"><br>
+    <button onclick="conta()">Ver a quantidade</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var qtd = Number(ipt_qtd.value);
+        txt.innerHTML=``;
+
+        if (qtd > 0) {
+            for (var i = 1; i <= qtd; i++) {
+                txt.innerHTML+=`🥤 `
+                
+            }
+        } 
+        else {
+            alert('Quantas latas?')
+        }
+    }
+
+</script>
+</html>

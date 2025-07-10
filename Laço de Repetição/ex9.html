@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+
+<body>
+    <h2>Tabuada</h2>
+    selecione a Tabuada
+    <select id="ipt_opcao">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <br> <br>
+    Até qual número deve ser construída? <input type="number" id="ipt_num"><br>
+    <button onclick="conta()">Ver Tabuada</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var final = Number(ipt_num.value);
+        var valor = Number(ipt_opcao.value);
+        txt.innerHTML = ``;
+
+        if (final >= 1) {
+            for (var i = 1; i <= final; i++) {
+
+                if (i % 2 == 0) {
+                    txt.innerHTML += `<span style="color:blue">${valor} x ${i} = ${valor * i}</span><br>`
+                }
+                else if (i % 2 == 1) {
+                    txt.innerHTML += `<span style="color:red">${valor} x ${i} = ${valor * i}</span><br>`
+                }
+            }
+        }
+        else {
+            alert('Selecione uma tabuada e um limite')
+        }
+    }
+
+</script>
+
+</html>

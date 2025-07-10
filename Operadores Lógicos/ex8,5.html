@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Processo Seletivo</h2>
+    Nota do ENEM: <input type="number" id="ipt_enem"><br>
+    Nota processo seletivo: <input type="number" id="ipt_mentes"><br>
+    <button onclick="resultado()">Avaliação</button><br>
+</body>
+<script>
+
+    function resultado() {
+        var enem = Number(ipt_enem.value);
+        var mentes = Number(ipt_mentes.value);
+
+        if (enem == '' || mentes == '') {
+            alert('Insira Valores');
+        } 
+        else if (enem >= 800 || mentes >= 700) {
+            alert('Parabéns! Aprovado')
+        }
+        else {
+            alert('Tente semestre que vem!')
+        }
+    }
+
+</script>
+</html>

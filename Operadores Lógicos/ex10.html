@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Mercado</h2>
+    Qual a forma de pagamento? <input type="text" id="ipt_pagamento"> <br>
+    <button onclick="resultado()">Analisar compra</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function resultado() {
+        var pagamento = ipt_pagamento.value;
+        txt.innerHTML=''
+
+        if (pagamento == '') {
+            alert('Insira a forma de pagemento!!!')
+        }
+        else if (pagamento == 'Dinheiro' || pagamento =='Cartão de débito') {
+            txt.innerHTML=`Você terá que pagar a vista`
+        }
+        else if ( pagamento == 'Cartão de crédito' || pagamento == 'Boleto') {
+            txt.innerHTML=`Pagamento poderá ser parcelado`
+        }
+            
+        
+    }
+
+</script>
+</html>

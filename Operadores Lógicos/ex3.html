@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Aprovação</h2>
+    Qual a nota do aluno: <input type="number" id="ipt_nota"><br>
+    <button onclick="conta()">Avaliar aluno</button><br>
+</body>
+<script>
+
+    function conta() {
+        var nota = Number(ipt_nota.value);
+
+        if (nota >= 0 && nota <= 10) {
+            alert('Nota válida!')
+        } 
+        else{
+            alert('Onde já se viu nota menor que 0 e maior que 10?!');
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Fases da Vida</h2>
+    Digite sua idade: <input type="number" id="ipt_idade" oninput="contaridade()"><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+function contaridade() {
+    var idadeMax = Number(ipt_idade.value);
+    txt.innerHTML = '';
+
+    if (idadeMax >= 0 && idadeMax <= 150) {
+        for (var i = 0; i <= idadeMax; i++) {
+            var fase = '';
+
+            if (i >= 0 && i <= 4) {
+                fase = 'Primeira Infância';
+            } 
+            else if (i > 4 && i <= 6) {
+                fase = 'Pré-escolar';
+            } 
+            else if (i > 6 && i <= 10) {
+                fase = 'Segunda Infância';
+            } 
+            else if (i > 10 && i <= 18) {
+                fase = 'Adolescência';
+            } 
+            else if (i > 18 && i <= 50) {
+                fase = 'Adulto';
+            } 
+            else if (i > 50 && i <= 100) {
+                fase = 'Melhor Idade';
+            } 
+            else if (i > 100) {
+                fase = 'Matusalém';
+            }
+
+            txt.innerHTML += `${i} anos (${fase})<br>`;
+        }
+    } 
+    else {
+        alert('Informe uma idade válida entre 0 e 150.');
+    }
+}
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>TellTech</h2>
+    Qual o tamanho da tela? <input type="number" id="ipt_tela"><br>
+    Qual a cor? <input type="text" id="ipt_cor"><br>
+    <button onclick="resultado()">Será que ele gosta?</button><br>
+    <div id="txt"></div>
+    <!-- <img src="pessoafeliz.jpg" alt=""> -->
+</body>
+<script>
+
+    function resultado() {
+        var tela = Number(ipt_tela.value);
+        var cor = ipt_cor.value;
+        if (tela == '' || cor =='') {
+            alert('Insira Valores');
+        }
+        if (tela > 6.5 && (cor == 'preto' || cor == 'prata')) {
+             txt.innerHTML=`<img src="pessoafeliz.jpg" alt="">`
+        } else {
+            txt.innerHTML=`<img src="triste.jpeg" alt="">`
+        }
+    }
+
+</script>
+</html>

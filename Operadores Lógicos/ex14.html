@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Desempenho Alunos</h2>
+    Nota: <input type="number" id="ipt_nota"><br>
+    Frequência: <input type="number" id="ipt_freq"><br>
+    <button onclick="resultado()">Analisar Aluno</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function resultado() {
+        var nota = Number(ipt_nota.value);
+        var freq = Number(ipt_freq.value);
+        txt.innerHTML=''
+
+    if (ipt_nota.value === '' || ipt_freq.value === '') {
+        alert('Insira todos os valores!');
+        return;
+    }
+
+    if (nota < 0 || nota > 10) {
+        alert('Nota deve estar entre 0 e 10.');
+        return;
+    }
+
+    if (freq < 0 || freq > 100) {
+        alert('Frequência deve estar entre 0% e 100%.');
+        return;
+    }
+
+    // Avaliação da nota
+    if (nota >=0 && nota < 6) {
+        txt.innerHTML+= 'Aluno ficou abaixo da média.<br>';
+    } 
+    else if (nota >=6 && nota <= 8) {
+        txt.innerHTML+= 'Aluno ficou na média.<br>';
+    } 
+    else {
+        txt.innerHTML += 'Aluno acima da média.<br>';
+    }
+
+    // Avaliação da frequência
+    if (freq >= 75) {
+        txt.innerHTML+= 'Aluno aprovado por frequência.';
+    } 
+    else {
+        txt.innerHTML += 'Aluno reprovado por frequência.';
+    }
+
+
+    }
+
+</script>
+</html>

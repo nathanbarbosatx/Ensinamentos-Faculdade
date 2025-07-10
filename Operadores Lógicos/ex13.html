@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Banco melete</h2>
+    Login: <input type="text" id="ipt_login"><br>
+    Senha: <input type="text" id="ipt_senha"><br>
+    Chave Secreta: <input type="text" id="ipt_chave"><br>
+    <button onclick="resultado()">Autenticar</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function resultado() {
+        var login = ipt_login.value;
+        var senha = ipt_senha.value;
+        var chave = ipt_chave.value;
+
+        if (login =='' || senha == '' || chave == '') {
+            alert('Insira Valores em todos os campos');
+        }
+        else if (login == 'ana' && senha == 'braga' && (chave == '1949' || chave == 'louro jose')) {
+            txt.innerHTML=`Usuário autenticado`
+        }
+        else {
+            txt.innerHTML=`Falha na autenticação`
+        }
+
+    }
+
+</script>
+</html>

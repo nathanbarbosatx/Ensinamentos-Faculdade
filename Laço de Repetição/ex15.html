@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laço</title>
+</head>
+<body>
+    <h2>Rotina de Treino</h2>
+    De quantos em quantos dias você faz musculação? <input type="number" id="ipt_qtd"><br>
+    <button onclick="conta()">Exibir rotina de treino</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var qtd = Number(ipt_qtd.value);
+        txt.innerHTML=``;
+
+        if (qtd > 0) {
+            for (var i = 1; i <= 30; i++) {
+                if ((i - 1) % qtd == 0) {
+                    txt.innerHTML+=`Dia ${i} - Musculação <br>`
+                    
+                } else {
+                    txt.innerHTML+=`Dia ${i} - Comer, dormir etc<br>`
+                }
+                
+            }
+        }
+        else {
+            alert('Digite um número válido (mínimo 1)')
+        }
+    }
+
+</script>
+</html>

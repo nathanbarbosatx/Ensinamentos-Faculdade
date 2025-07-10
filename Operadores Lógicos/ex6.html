@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES</title>
+</head>
+<body>
+    <h2>Pilottus | Processo Seletivo</h2>
+    Nome do Piloto: <input type="text" id="ipt_nome"><br>
+    Altura do Piloto: <input type="number" id="ipt_altura"><br>
+    Altura Inicial: <input type="number" id="ipt_inicial"><br>
+    Altura Final: <input type="number" id="ipt_final"><br>
+    <button onclick="conta()">Verificar Candidato</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    function conta() {
+        var nome = ipt_nome.value;
+        var alturapi = Number(ipt_altura.value);
+        var inicial = Number(ipt_inicial.value);
+        var final = Number(ipt_final.value);
+        txt.innerHTML='';
+
+        if ( nome == '' || alturapi == '' || inicial == '' || final == '') {
+            alert('Insira Valores Validos');
+        } 
+        else if ( inicial <= 0 || (inicial > final)) {
+            alert('Intervalo da altura de seleção é inválida!')
+        }
+        else if ( alturapi > inicial && alturapi < final) {
+            txt.innerHTML=`O candidato ${nome}, com altura de ${alturapi} metros, participará do processo de seleção de piloto`
+        }
+        else {
+            txt.innerHTML=`Infelizmente, o candidato ${nome}, com altura de ${alturapi} metros, não atende os requisitos da seleção`
+        }
+    }
+
+</script>
+</html>
