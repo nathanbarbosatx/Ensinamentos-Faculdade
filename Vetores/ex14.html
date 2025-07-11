@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Digitar</h2>
+    Digite um número qualquer: <input type="number" id="ipt_num"><br>
+    <button onclick="conta()">Analisar histórico</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function conta() {
+        var num = Number(ipt_num.value);
+        txt.innerHTML = '';
+
+        if (num == '') {
+            alert('Insira um valor')
+        }
+        else {
+            vt_lista.push(num);
+
+            for (var i = 0; i < vt_lista.length; i++) {
+                txt.innerHTML += `${i + 1}º Número: ${vt_lista[i]}<br>`
+            }
+
+            var maior = vt_lista[0];
+            var menor = vt_lista[0];
+
+            for (var i = 0; i < vt_lista.length; i++) {
+                if (vt_lista[i] > maior) {
+                    maior = vt_lista[i]
+                }
+
+                if (vt_lista[i] < menor) {
+                    menor = vt_lista[i]
+                }
+                
+            }
+            txt.innerHTML+=`Maior: ${maior}<br> Menor: ${menor}`
+        }
+    }
+
+</script>
+
+</html>

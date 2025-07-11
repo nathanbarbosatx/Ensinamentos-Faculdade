@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>MercadoTech</h2>
+    Nome do Produto: <input type="text" id="ipt_nome"><br>
+    Preço de Compra: <input type="number" id="ipt_valor"><br>
+    <button onclick="cadastro()">Cadastrar</button><br>
+    <button onclick="estoque()">Relatório de estoque</button><br>
+    <div id="txt"></div>
+
+</body>
+<script>
+    var vt_lista = [];
+    var vt_preco = [];
+
+    function cadastro() {
+        var nome = ipt_nome.value.trim();
+        var valor = Number(ipt_valor.value);
+
+        if (nome == '' || valor == '') {
+            alert('Insira valores dos produtos e nomes');
+        } else {
+            vt_lista.push(nome);
+            vt_preco.push(valor);
+            alert('Produto e preço cadastrado');
+        }
+
+        ipt_nome.value = '';
+        ipt_valor.value = '';
+    }
+
+    function estoque() {
+        txt.innerHTML = '';
+
+        if (vt_lista.length == 0) {
+            alert('Cadastre os produtos e preços');
+        } else {
+            var totalCompra = 0;
+            var totalVenda = 0;
+
+            var maiorPreco = vt_preco[0];
+            var menorPreco = vt_preco[0];
+            var nomeMaisCaro = vt_lista[0];
+            var nomeMaisBarato = vt_lista[0];
+
+            txt.innerHTML += `Total de Produtos: ${vt_lista.length}<br>`;
+
+            for (var i = 0; i < vt_lista.length; i++) {
+                var precoCompra = vt_preco[i];
+                var precoVenda = precoCompra * 1.25;
+
+                totalCompra += precoCompra;
+                totalVenda += precoVenda;
+
+                if (precoCompra > maiorPreco) {
+                    maiorPreco = precoCompra;
+                    nomeMaisCaro = vt_lista[i];
+                }
+
+                if (precoCompra < menorPreco) {
+                    menorPreco = precoCompra;
+                    nomeMaisBarato = vt_lista[i];
+                }
+
+                txt.innerHTML += `
+                Produto ${i + 1}: ${vt_lista[i]}<br>
+                Preço de compra: R$${precoCompra}. Vender por R$${precoVenda}<br>`;
+            }
+
+            var mediaVenda = totalVenda / vt_lista.length;
+
+            txt.innerHTML +=
+                `  Produto mais caro: ${nomeMaisCaro} (R$${maiorPreco.toFixed(2)})<br>
+               Produto mais barato: ${nomeMaisBarato} (R$${menorPreco.toFixed(2)})<br>
+               Soma dos preços de compra: R$${totalCompra.toFixed(2)}<br>
+               Média de preço de venda: R$${mediaVenda.toFixed(2)}<br>`;
+        }
+    }
+</script>
+
+</html>

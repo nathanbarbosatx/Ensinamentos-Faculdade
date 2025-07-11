@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Lita de Busão</h2>
+    Insira o nome da linha: <input type="text" id="ipt_linha"><br>
+    <button onclick="cadastro()">Gravar busão</button>
+    <br><br>
+    Pesquisar linha: <input type="text" id="ipt_pesq"><br>
+    <button onclick="pesquisa()">Pesquisar</button><br><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function cadastro() {
+        var linha = ipt_linha.value;
+
+        if (linha == '') {
+            alert('Insira o nome da linha')
+        }
+        else {
+            vt_lista.push(linha);
+
+            txt.innerHTML = '';
+
+            for (var i = vt_lista.length - 1; i >= 0; i--) {
+                txt.innerHTML += `${vt_lista[i]} <br>`
+
+            }
+        }
+        ipt_linha.value = '';
+    }
+
+    function pesquisa() {
+        txt.innerHTML = '';
+        var pesq = ipt_pesq.value;
+        var texto = '';
+        var contador = 0;
+
+        for (var i = 0; i < vt_lista.length; i++) {
+            if (vt_lista[i] === pesq) {
+                contador++;
+
+                if (contador == 1) {
+                    texto += (i + 1);
+                }
+                else {
+                    texto += ', ' + (i + 1);
+                }
+            }
+        }
+        if (vt_lista.includes(pesq)) {
+            txt.innerHTML=`Você já pegou essa linha ${contador} vezes, nessa ordem: ${texto}`
+        }
+        else {
+            txt.innerHTML = `Você nunca pegou essa linha`
+        }
+    }
+
+</script>
+
+</html>

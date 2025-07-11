@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+<body>
+    <h2>Vamos Viajar?</h2>
+    Destino de Viagem : <input type="text" id="ipt_destino"><br>
+    <button onclick="add()">Adicionar</button><br>
+    <button onclick="primeira()">Primeira Viagem</button><br>
+    <button onclick="terceira()">Terceira Viagem</button><br>
+    <button onclick="ultima()">Última Viagem</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function add() {
+        txt.innerHTML=``;
+
+        var destino = ipt_destino.value.trim();
+
+        if ( destino == '') {
+            alert('Insira o Primeiro Destino')
+        } 
+        else {
+            alert('Destino cadastrado com sucesso!')
+            vt_lista.push(destino);
+        }
+    }
+
+    function primeira() {
+        txt.innerHTML=``;
+        
+        if (vt_lista.length == 0) {
+            alert('Ainda não viajou')
+        } 
+        else {
+            txt.innerHTML=`Sua primeira viagem foi para ${vt_lista[0]}. Que LEGAL!!!`
+        }
+    }
+
+    function terceira() {
+        txt.innerHTML=``;
+
+        if (vt_lista.length == 0 || vt_lista.length == 1) {
+            alert('Você ainda não realizou duas viagens')
+        }
+        else {
+            txt.innerHTML=`Sua terceira viagem foi para ${vt_lista[2]}. Baita Viagem :) `
+        }
+    }
+
+    function ultima() {
+        txt.innerHTML=``;
+
+        if (vt_lista.length == 0) {
+            alert('Cadastre o destino')
+        } 
+        else {
+            txt.innerHTML=`Sua última viagem foi para ${vt_lista[vt_lista.length - 1]}`
+        }
+    }
+
+</script>
+</html>

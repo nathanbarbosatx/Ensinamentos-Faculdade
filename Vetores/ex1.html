@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Feira</h2>
+    Pesquisar fruta na lista: <input type="text" id="ipt_fruta"><br>
+    <button onclick="pesquisar()">Pesquisar</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = ['Banana', 'Uva', 'Morango', 'Abacaxi'];
+
+    function pesquisar() {
+        var fruta = ipt_fruta.value;
+        txt.innerHTML = '';
+
+        if (fruta == '') {
+            alert('Insira uma fruta')
+        }
+        else {
+
+            if (vt_lista.includes(fruta)) {
+                txt.innerHTML = `A fruta ${fruta} existe na lista`
+            }
+            else {
+                txt.innerHTML = `Não existe a fruta ${fruta} na lista.`
+            }
+
+
+        }
+
+    }
+
+</script>
+
+</html>

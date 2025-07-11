@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>MercadoTech</h2>
+    Nome do Produto: <input type="text" id="ipt_nome"><br>
+    Preço de Compra: <input type="number" id="ipt_valor"><br>
+    <button onclick="cadastro()">Cadastrar</button><br>
+    <button onclick="estoque()">Relatório de estoque</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+    vt_preco = [];
+    var contador = 0;
+    function cadastro() {
+        var nome = ipt_nome.value;
+        var valor = Number(ipt_valor.value);
+
+        if (nome == '' || valor == '') {
+            alert('Insira valores dos produtos e nomes')
+        }
+        else {
+            vt_lista.push(nome);
+            vt_preco.push(valor);
+            alert('Produto e preço cadastrado')
+            contador++
+        }
+        ipt_nome.value = '';
+        ipt_valor.value = '';
+    }
+
+    function estoque() {
+
+        if (vt_lista.length == 0 || vt_preco.length == 0) {
+            alert('Cadastre os produtos e preços')
+        }
+        else {
+            txt.innerHTML += `Total de Produtos: ${contador}<br>`
+
+            for (var i = 0; i < vt_lista.length; i++) {
+
+                var precocompra = vt_preco[i];
+                var precovenda = vt_preco[i] * 1.25;
+
+                txt.innerHTML +=
+                    `Produto ${i + 1}: ${vt_lista[i]}<br>
+                    Preço de compra:R$${precocompra} Vender por R${precovenda}<br>`
+            }
+        }
+    }
+
+
+</script>
+
+</html>

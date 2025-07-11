@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Casas</h2>
+    Bairros onde morou: <input type="text" id="ipt_bairro"><br>
+    Ordem: <input type="number" id="ipt_ordem"><br>
+    <button onclick="cadastro()">Cadastrar bairro</button><br>
+    <button onclick="relembrar()">Relembrar moradia</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function cadastro() {
+        txt.innerHTML = ``;
+        var bairro = ipt_bairro.value.trim();
+
+        if (bairro == '') {
+            alert('Insira o nome do bairro')
+        }
+        else {
+            alert('Bairro cadasrtado com sucesso!');
+            vt_lista.push(bairro);
+        }
+
+        ipt_bairro.value = '';
+    }
+
+    function relembrar() {
+        txt.innerHTML = ``;
+        var ordem = Number(ipt_ordem.value);
+
+        if (ordem < 1) {
+            alert('Insira qual bairro você quer ver')
+        }
+        else if (ordem > vt_lista.length) {
+            txt.innerHTML = `Você ainda não morou num ${ordem}º bairro!`
+        }
+        else {
+            txt.innerHTML=`Você morou no bairro ${vt_lista[ordem - 1]}`
+        }
+
+        ipt_ordem.value ='';
+    }
+
+</script>
+
+</html>

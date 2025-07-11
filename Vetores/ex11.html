@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+<body>
+    <h2>Loja</h2>
+    Preço do produto: <input type="number" id="ipt_valor"><br>
+    <button onclick="cadastro()">Cadastrar</button><br>
+    <button onclick="atualiza()">Atualizar Estoque</button><br><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function cadastro() {
+        var valor = Number(ipt_valor.value);
+
+        if (valor == '') {
+            alert('Insira o valor');
+        }
+        else {
+            alert('Preço Cadastrado com sucesso')
+            vt_lista.push(valor);
+        }
+        ipt_valor.value = '';
+    }
+
+    function atualiza() {
+        txt.innerHTML='';
+        var total = 0;
+        if (vt_lista.length == 0) {
+            alert('Insira valor nos produtos')
+        }
+        else {
+
+            for (var i = vt_lista.length - 1; i >= 0; i--) {
+                
+                txt.innerHTML+=`Você tem ${vt_lista.length} produtos cadastrados em estoque<br>`
+                break;    
+            }
+
+            for (var i = 0; i < vt_lista.length; i++) {
+                total += vt_lista[i];
+            }
+
+            txt.innerHTML+=`Seu estoque vale R$${total}`
+        }
+    }
+
+
+</script>
+</html>

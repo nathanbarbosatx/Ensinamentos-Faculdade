@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Projetos</h2>
+    Nome de cada projeto: <input type="text" id="ipt_projeto"><br>
+    <button onclick="cadastro()">Registrar Projetos</button><br>
+    <button onclick="exibir()">Mostrar Projetos</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function cadastro() {
+        txt.innerHTML = '';
+        var projeto = ipt_projeto.value;
+
+        if (projeto == '') {
+            alert('Insira o nome do projeto');
+        }
+        else {
+            vt_lista.push(projeto);
+
+            for (var i = 0; i < vt_lista.length; i++) {
+
+                if (vt_lista.length <= 4) {
+                    txt.innerHTML = `Você já fez ${vt_lista.length} projetos. Por isso você é um profissional Júnior`
+                }
+                else if (vt_lista.length <= 12) {
+                    txt.innerHTML = `Você já fez ${vt_lista.length} projetos. Por isso você é um profissional Pleno`
+                }
+                else {
+                    txt.innerHTML = `Você já fez ${vt_lista.length} projetos. Por isso você é um profissional Sênior`
+                }
+
+            }
+        }
+    }
+
+    function exibir() {
+        txt.innerHTML = '';
+
+        if (vt_lista.length == 0) {
+            alert('Insira nome de filme')
+        }
+        else {
+
+            txt.innerHTML = ''
+
+            for (var i = vt_lista.length - 1; i >= 0; i--) {
+                txt.innerHTML += `${vt_lista[i]} <br>`
+
+            }
+        }
+    }
+</script>
+
+</html>

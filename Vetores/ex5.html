@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Lista de filmes</h2>
+    Adicionar filme: <input type="text" id="ipt_filme"><br>
+    <button onclick="cadastro()">Cadastrar filme</button>
+    <div id="txt">
+        Total de filmes favoritos: <br>
+        Seu grande favorito: <br>
+        Seu 3º filme favorito: <br>
+        Seu último favorito: <br>
+    </div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function cadastro() {
+        txt.innerHTML = ''
+        var filme = ipt_filme.value.trim();
+    
+
+        if (filme == '') {
+            alert('Insira um filme');
+        }
+        else {
+            alert('Filme cadastrado');
+            vt_lista.push(filme);
+
+
+            if (vt_lista.length < 3) {
+                txt.innerHTML += `
+                     Total de filmes favoritos:${vt_lista.length}  <br> 
+                     Seu grande favorito:${vt_lista[0]}       <br>
+                     Seu 3º filme favorito: ainda não existe     <br>  
+                     Seu último favorito: ${vt_lista[0]}       <br>`
+            }
+            else {
+                txt.innerHTML += ` 
+                     Total de filmes favoritos:${vt_lista.length}  <br> 
+                     Seu grande favorito:${vt_lista[0]}       <br>
+                     Seu 3º filme favorito:${vt_lista[2]}     <br>  
+                     Seu último favorito:${vt_lista[0]}       <br>`
+            }
+
+
+        }
+
+    }
+
+</script>
+
+</html>

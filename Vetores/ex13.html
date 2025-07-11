@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Campanha do Time</h2>
+
+    Indique o resultado:
+    <select id="ipt_resultado">
+        <option value="">--Escolha--</option>
+        <option value="Vitória">Vitória</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select>
+    <button onclick="registrar()">Registrar jogo</button>
+    <br><br>
+
+    Indique qual jogo deseja saber o resultado: <input type="number" id="ipt_jogo" oninput="consultar()">
+    <br><br>
+    <div id="txt"></div>
+    <div id="res_jogo"></div>
+</body>
+<script>
+    var vt_resultados = [];
+
+    function registrar() {
+        var resultado = ipt_resultado.value;
+
+        if (resultado == '') {
+            alert('Selecione um resultado!');
+        }
+        else {
+            vt_resultados.push(resultado);
+            alert('Resultado registrado com sucesso!');
+
+            var vitoria = 0;
+            var empate = 0;
+            var derrota = 0;
+            var totalPontos = 0;
+
+
+            for (var i = 0; i < vt_resultados.length; i++) {
+                if (vt_resultados[i] == 'Vitória') {
+                    vitoria++;
+                    totalPontos += 3;
+                }
+                else if (vt_resultados[i] == 'Empate') {
+                    empate++;
+                    totalPontos += 1;
+                }
+                else if (vt_resultados[i] == 'Derrota') {
+                    derrota++;
+                }
+            }
+
+            var totalJogos = vt_resultados.length;
+            var pontosPossiveis = totalJogos * 3;
+            var aproveitamento = (totalPontos / pontosPossiveis) * 100;
+
+            txt.innerHTML = `
+            O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas<br>
+            Pontuação total: ${totalPontos} pontos<br>
+            Aproveitamento: ${aproveitamento.toFixed(1)}%
+        `;
+        }
+    }
+
+    function consultar() {
+        var num = Number(ipt_jogo.value);
+        var indice = num - 1;
+
+        res_jogo.innerHTML = '';
+
+        if (num <= 0) {
+            res_jogo.innerHTML = 'Informe um número válido!';
+        }
+        else if (indice >= vt_resultados.length) {
+            res_jogo.innerHTML = `Não foi cadastrado um ${num}º jogo`;
+        }
+        else {
+            var res = vt_resultados[indice];
+            
+            if (res == 'Vitória') {
+                res_jogo.innerHTML = `No ${num}º jogo, o time Ganhou`;
+            }
+            else if (res == 'Empate') {
+                res_jogo.innerHTML = `No ${num}º jogo, o time Empatou`;
+            }
+            else {
+                res_jogo.innerHTML = `No ${num}º jogo, o time Perdeu`;
+            }
+        }
+    }
+</script>
+
+</html>

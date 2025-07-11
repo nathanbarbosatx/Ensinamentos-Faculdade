@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Listão de filme</h2>
+    Melhores filmes: <input type="text" id="ipt_filme"><br>
+    <button onclick="cadastro()">Cadastrar</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function cadastro() {
+        var filme = ipt_filme.value;
+
+
+        if (filme == '') {
+            alert('Insira filmes a lista')
+        }
+        else {
+            vt_lista.push(filme);
+
+            for (var i = vt_lista.length -1 ; i < vt_lista.length; i++) {
+
+                if (i % 2 == 0) {
+                    txt.innerHTML += `<p style="color: blue;">${vt_lista[i]}</p>`
+                }
+                else {
+                    txt.innerHTML += `<p style="color: red;">${vt_lista[i]}</p>`
+                }
+
+            }
+
+        }
+        ipt_filme.value='';
+    }
+
+
+</script>
+
+</html>

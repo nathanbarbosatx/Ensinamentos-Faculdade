@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR</title>
+</head>
+
+<body>
+    <h2>Familia</h2>
+    Nome de um filho(a): <input type="text" id="ipt_filho"><br>
+    <button onclick="cadastro()">Cadastrar</button><br>
+    <button onclick="atualizar()">Atualizar Família</button><br>
+    <div id="txt"></div>
+</body>
+<script>
+
+    vt_lista = [];
+
+    function cadastro() {
+        var filho = ipt_filho.value;
+
+        if (filho == '') {
+            alert('Insira o nome do filho(a)')
+        }
+
+        else if (vt_lista.includes(filho)) {
+            alert('Não pode mais de 1 filho(a) com o mesmo nome!')
+        }
+        else {
+            alert('Nome do filho(a) cadastrado com sucesso!')
+            vt_lista.push(filho)
+        }
+        ipt_filho.value = '';
+    }
+
+    function atualizar() {
+
+        txt.innerHTML = '';
+
+        if (vt_lista.length == 0) {
+            alert('Insira o nome dos filho(s)')
+        }
+        else {
+
+            var qtd = vt_lista.length;
+            var particular = qtd * 3000;
+            var publica = qtd * 1500;
+
+            for (var i = 0; i < vt_lista.length; i++) {
+
+                txt.innerHTML = ` 
+                Você tem ${vt_lista.length} filhos<br>
+                Seu custo mensal será aproximadamente R$${publica} se colocá-los em escola particular ou R$${particular} se eles estudarem em escola pública`
+
+            }
+        }
+    }
+
+</script>
+
+</html>
