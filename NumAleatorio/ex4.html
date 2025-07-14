@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleatorio</title>
+</head>
+<body>
+    <h2>Número Da Sorte</h2>
+    Entre com seu número da sorte: <input type="number" id="ipt_num"><br>
+    (entre 0 e 100)
+    <button onclick="sorteio()">Valendo!</button>
+    <div id="txt"></div>
+</body>
+<script>
+
+
+    function sorteio() {
+        var valorDigitado = ipt_num.value;
+        txt.innerHTML = '';
+
+        if (valorDigitado === '') {
+            txt.innerHTML = "Por favor, digite um número!";
+            return;
+        }
+
+        var numeroSorte = Number(valorDigitado);
+
+        if (isNaN(numeroSorte) || numeroSorte < 0 || numeroSorte > 100) {
+            txt.innerHTML = "Número inválido! Insira um número entre 0 e 100.";
+            return;
+        }
+
+        var count = 0;
+        var sorteado;
+
+        while (true) {
+            sorteado = Math.floor(Math.random() * 101);
+            count++;
+            if (sorteado === numeroSorte) {
+                txt.innerHTML = `Foram necessários ${count} sorteios`;
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

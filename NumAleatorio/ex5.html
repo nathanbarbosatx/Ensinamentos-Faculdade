@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleatorio</title>
+</head>
+<body>
+    <h2>FIVE TURTLES</h2>
+    <p>Digite o nome dos 5 corredores:</p>
+    <input class="nome" placeholder="Corredor 1"><br>
+    <input class="nome" placeholder="Corredor 2"><br>
+    <input class="nome" placeholder="Corredor 3"><br>
+    <input class="nome" placeholder="Corredor 4"><br>
+    <input class="nome" placeholder="Corredor 5"><br><br>
+    Distância (5 a 42 km): <input type="number" id="distancia"><br><br>
+    <button onclick="correr()">Dar a largada</button>
+    <div id="resultado"></div>
+</body>
+<script>
+
+    function tempoAleatorio() {
+        return +(Math.random() * 2 + 4).toFixed(1);
+    }
+
+    function correr() {
+        var nomes = [];
+        var tempos = [];
+        var historico = [];
+        var melhor = { tempo: 10 };
+        var pior = { tempo: 0 };
+        var inputs = document.querySelectorAll(".nome");
+
+
+        for (var i = 0; i < inputs.length; i++) {
+            var nome = inputs[i].value.trim();
+
+            if (!nome) return alert("Preencha todos os nomes.");
+            nomes.push(nome);
+            tempos.push(0);
+            historico.push([]);
+        }
+
+        var kmTotal = Number(distancia.value);
+        if (kmTotal < 5 || kmTotal > 42)
+            return alert("Distância inválida.");
+
+        for (var km = 1; km <= kmTotal; km++) {
+            for (var i = 0; i < 5; i++) {
+                var tempo = tempoAleatorio();
+                tempos[i] += tempo;
+                historico[i].push({ km, tempo, acumulado: tempos[i] });
+
+                if (tempo < melhor.tempo)
+                    melhor = { nome: nomes[i], tempo, km };
+
+                if (tempo > pior.tempo)
+                    pior = { nome: nomes[i], tempo, km };
+            }
+
+            if (km < kmTotal) {
+                var menor = Math.min(...tempos);
+                var lider = nomes[tempos.indexOf(menor)];
+                alert(`KM ${km}: ${lider} lidera com ${menor.toFixed(1)} min`);
+            }
+        }
+
+        var ranking = [];
+        for (var i = 0; i < nomes.length; i++) {
+            ranking.push({ nome: nomes[i], tempo: tempos[i] });
+        }
+        ranking.sort(function (a, b) {
+            return a.tempo - b.tempo;
+        });
+
+        var resultado = document.getElementById("resultado");
+        var texto = `<h3>🏁 Pódio</h3>
+    🥇 ${ranking[0].nome} (${ranking[0].tempo.toFixed(1)} min)<br>
+    🥈 ${ranking[1].nome} (${ranking[1].tempo.toFixed(1)} min)<br>
+    🥉 ${ranking[2].nome} (${ranking[2].tempo.toFixed(1)} min)<br><br>`;
+
+        texto += "<h3>Histórico de Voltas (último → primeiro)</h3>";
+        for (var km = kmTotal - 1; km >= 0; km--) {
+            texto += `<b>KM ${km + 1}</b><br>`;
+            for (var i = 0; i < 5; i++) {
+                var v = historico[i][km];
+                texto += `${nomes[i]} - Volta: ${v.tempo.toFixed(1)} min | Acumulado: ${v.acumulado.toFixed(1)} min<br>`;
+            }
+            texto += "<br>";
+        }
+
+        texto += `<h3>📊 Estatísticas</h3>
+    Melhor volta: ${melhor.nome}, ${melhor.tempo.toFixed(1)} min (KM ${melhor.km})<br>
+    Pior volta: ${pior.nome}, ${pior.tempo.toFixed(1)} min (KM ${pior.km})<br>`;
+
+        resultado.innerHTML = texto;
+    }
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleatorio</title>
+</head>
+<body>
+    <h2>Sistema de Avaliação de Atendente</h2>
+    <button onclick="avaliar()">Avaliar</button><br><br>
+    <button onclick="equipe()">Equipe</button><br><br>
+    <div id="txt"></div>
+    <div id="texto"></div>
+</body>
+<script>
+
+    var avaliacao = [];
+
+    function avaliar() {
+        var nota = (Math.random() * 5).toFixed(1);
+        avaliacao.push(Number(nota));
+        txt.innerHTML = `Nota recebida: ${nota}<br>`;
+
+        if (nota <= 0.5) {
+            txt.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png">`;
+        }
+        else if (nota <= 1.5) {
+            txt.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png">`;
+        }
+        else if (nota <= 3.5) {
+            txt.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png">`;
+        }
+        else if (nota <= 4.5) {
+            txt.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png">`;
+        }
+        else {
+            txt.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png">`;
+        }
+    }
+
+    function equipe() {
+        if (avaliacao.length == 0) {
+            texto.innerHTML = `Nenhuma avaliação realizada ainda!`;
+        }
+        else {
+            var soma = 0;
+            for (var i = 0; i < avaliacao.length; i++) {
+                soma += avaliacao[i];
+            }
+
+            var media = soma / avaliacao.length;
+            texto.innerHTML = `Média geral: ${media.toFixed(1)}<br>`;
+
+            if (media <= 0.5) {
+                texto.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png">`;
+            }
+            else if (media <= 1.5) {
+                texto.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png">`;
+            }
+            else if (media <= 3.5) {
+                texto.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png">`;
+            }
+            else if (media <= 4.5) {
+                texto.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png">`;
+            }
+            else {
+                texto.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png">`;
+            }
+        }
+    }
+
+</script>
+</html>
